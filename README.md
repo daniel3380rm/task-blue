@@ -1,74 +1,73 @@
 # Online Store API
 
-این پروژه یک API برای یک فروشگاه آنلاین است که با استفاده از NestJS و MongoDB ساخته شده است. این API امکان مدیریت محصولات، سفارشات و کاربران را فراهم می‌کند.
+## Project Structure
 
-## ساختار پروژه
+The project consists of the following modules:
 
-پروژه از ماژول‌های زیر تشکیل شده است:
+1. **AppModule**: The main module that connects all other modules.
+2. **ProductModule**: Manages products, including creating, updating, deleting, and retrieving product information.
+3. **PurchaseModule**: Handles purchases and orders.
+4. **UserModule**: Manages users and authentication.
+5. **SharedModule**: Contains shared services and components used across other modules.
 
-1. **AppModule**: ماژول اصلی که سایر ماژول‌ها را به هم متصل می‌کند.
-2. **ProductModule**: مدیریت محصولات شامل ایجاد، به‌روزرسانی، حذف و دریافت اطلاعات محصولات.
-3. **PurchaseModule**: مدیریت خریدها و سفارشات.
-4. **UserModule**: مدیریت کاربران و احراز هویت.
-5. **SharedModule**: شامل سرویس‌ها و کامپوننت‌های مشترک مورد استفاده در سایر ماژول‌ها.
+## How to Run the Project
 
-## نحوه‌ی اجرای پروژه
+1. Ensure that Node.js and MongoDB are installed on your system.
 
-1. ابتدا مطمئن شوید که Node.js و MongoDB روی سیستم شما نصب شده است.
+2. Clone the repository:
 
-2. پروژه را کلون کنید:
-
-   ```
-   git clone https://github.com/daniel3380rm/task-blue
+   ```bash
+   git clone https://github.com/daniel3380rm/microservice-nestjs-cqrs
    ```
 
-3. وابستگی‌ها را نصب کنید:
+3. Install dependencies:
 
-   ```
+   ```bash
    npm install
    ```
 
-4. یک فایل `.env` در ریشه‌ی پروژه ایجاد کنید و متغیرهای محیطی زیر را در آن قرار دهید:
+4. Create a `.env` file in the root of the project and add the following environment variables:
 
-   ```
+   ```env
    MONGODB_URI=mongodb://localhost:27017/online-store
    ```
 
-5. پروژه را اجرا کنید:
+5. Start the project:
 
-   ```
+   ```bash
    npm run start:dev
    yarn run start:dev
    ```
 
-6. API اکنون در آدرس `http://localhost:3000` در دسترس است.
+6. The API will now be available at `http://localhost:3000`.
 
-## ویژگی‌های برجسته
+## Key Features
 
-1. **معماری تمیز**: پروژه با استفاده از اصول Clean Architecture پیاده‌سازی شده است که باعث جداسازی لایه‌های مختلف و افزایش قابلیت نگهداری و توسعه‌پذیری می‌شود.
+1. **Clean Architecture**: The project is implemented using Clean Architecture principles, ensuring separation of layers and improved maintainability and scalability.
 
-2. **استفاده از CQRS**: الگوی Command Query Responsibility Segregation (CQRS) در این پروژه پیاده‌سازی شده است که امکان مقیاس‌پذیری بهتر و جداسازی عملیات خواندن و نوشتن را فراهم می‌کند.
+2. **CQRS**: The Command Query Responsibility Segregation (CQRS) pattern is implemented, enabling better scalability and separation of read and write operations.
 
-3. **Swagger**: مستندسازی API با استفاده از Swagger انجام شده است که امکان تست و بررسی آسان API را فراهم می‌کند.
+3. **Swagger**: API documentation is provided using Swagger, allowing for easy testing and review of the API.
 
-4. **Validation**: از class-validator برای اعتبارسنجی داده‌های ورودی استفاده شده است که امنیت و صحت داده‌ها را تضمین می‌کند.
+4. **Validation**: Input data is validated using `class-validator`, ensuring data integrity and security.
 
-5. **تست**: تست‌های واحد و یکپارچگی با استفاده از Jest نوشته شده‌اند که اطمینان از عملکرد صحیح کد را فراهم می‌کند.
+5. **Testing**: Unit and integration tests are written using Jest, providing confidence in code functionality.
 
-6. **مدیریت خودکار کاربر پیش‌فرض**: یک سرویس برای ایجاد و مدیریت کاربر پیش‌فرض تعبیه شده است که کار با API را در مراحل اولیه‌ی توسعه آسان‌تر می‌کند.
+6. **Automatic Default User Management**: A service is included to create and manage a default user, making it easier to work with the API during the initial stages of development.
 
-7. **استفاده از TypeScript**: کل پروژه با TypeScript نوشته شده است که امکان توسعه‌ی مطمئن‌تر و با خطای کمتر را فراهم می‌کند.
+7. **TypeScript**: The project is written entirely in TypeScript, enabling safer and more reliable development.
 
-## نکات برجسته
+## Highlights
 
-1. **معماری مقیاس‌پذیر**: ساختار پروژه به گونه‌ای طراحی شده است که امکان توسعه‌ی آسان و افزودن ویژگی‌های جدید را فراهم می‌کند.
+1. **Scalable Architecture**: The project structure is designed to support easy development and the addition of new features.
 
-2. **بهترین شیوه‌های NestJS**: از ویژگی‌های پیشرفته‌ی NestJS مانند Dependency Injection، Decorators و Pipes استفاده شده است.
+2. **NestJS Best Practices**: Advanced NestJS features such as Dependency Injection, Decorators, and Pipes are utilized.
 
-3. **قابلیت تست**: ساختار پروژه به گونه‌ای است که نوشتن و اجرای تست‌ها را آسان می‌کند.
+3. **Testability**: The project structure simplifies writing and executing tests.
 
-4. **مستندسازی خودکار**: با استفاده از Swagger، مستندات API به صورت خودکار تولید می‌شوند که کار با API را برای توسعه‌دهندگان front-end آسان‌تر می‌کند.
+4. **Automatic Documentation**: Swagger generates API documentation automatically, making it easier for front-end developers to interact with the API.
 
-5. **انعطاف‌پذیری**: استفاده از MongoDB به عنوان دیتابیس، انعطاف‌پذیری بالایی در ذخیره‌سازی داده‌ها فراهم می‌کند.
+5. **Flexibility**: MongoDB is used as the database, providing high flexibility for data storage.
 
-این پروژه نشان‌دهنده‌ی توانایی در طراحی و پیاده‌سازی یک API مقیاس‌پذیر، امن و قابل نگهداری است که می‌تواند برای پروژه‌های بزرگ و پیچیده مورد استفاده قرار گیرد.
+This project demonstrates the ability to design and implement a scalable, secure, and maintainable API that can be used for large and complex projects.
+
